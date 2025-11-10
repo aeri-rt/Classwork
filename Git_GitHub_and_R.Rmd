@@ -1,6 +1,6 @@
 ---
 title: "Classwork Activity"
-author: "Enter Your Name"
+author: "Ryan Trinh"
 output: html_notebook
 ---
 
@@ -27,6 +27,7 @@ head(students)
 
 ```{r}
 # Remove the Name column
+Students_Clean <- students[, !(names(students) %in% c("Name"))]
 
 ```
 
@@ -35,6 +36,7 @@ head(students)
 Why might someone drop a column like name or ID from a dataset?
 
 ### Answer:
+Dropping columns like name or ID can help protect the privacy of individuals in the dataset. Additionally, these columns may not be relevant for analysis and can clutter the dataset, making it harder to focus on the variables that matter for the analysis.
 
 ## Step 3: Visualize
 ```{r}
@@ -72,6 +74,25 @@ ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
 4. How could version control help when collaborating?
 5. What is the difference between a code chunk and regular text in R Markdown?
 6. How could R Markdown help you explain your analysis to someone else?
-
+  
 ### Answers:
+**4.1:** The chart shows the distribution of student satisfaction scores across different majors. Some majors have higher median satisfaction scores and less variability than others.
 
+**4.2:** The differences in satisfaction scores could be influenced by various factors such as curriculum difficulty, job prospects, faculty quality, or student support services associated with each major.
+
+**4.3:** The chart seems accurate as it effectively visualizes the data using boxplots. However, without additional context or data validation, it's hard to fully assess its accuracy. I found it really surprising that math had the highest average satisfaction.
+
+**4.4:** The chart is likely accurate in representing the data provided, but accuracy also depends on the quality and representativeness of the underlying data. If the dataset is small or biased, the conclusions drawn from the chart may not be reliable.
+
+
+**5.1:** Git add stages changes in your working directory, preparing them to be included in the next commit. It tells Git which changes you want to include in the version history.
+
+**5.2:** Git commit saves your staged changes to the local repository with a descriptive message, creating a new version in your project's history. Git push, on the other hand, uploads those committed changes from your local repository to a remote repository (like GitHub), making them available to others.
+
+**5.3:** GitHub provides a platform for version control and collaboration, allowing multiple people to work on the same project simultaneously. It also offers features like issue tracking, code reviews, and documentation, which help manage and improve projects effectively.
+
+**5.4:** Version control helps collaborators track changes made to the codebase, revert to previous versions if needed, and resolve conflicts when multiple people edit the same files. It ensures that everyone is working with the most up-to-date code and facilitates better communication among team members.
+
+**5.5:** A code chunk in R Markdown is a section of the document where you can write and execute R code, while regular text is used for narrative, explanations, or descriptions. Code chunks are enclosed by triple backticks and can include options for output formatting, whereas regular text is simply written as prose.
+
+**5.6:** R Markdown allows you to combine code, output, and narrative in a single document, making it easier to explain your analysis step-by-step. It provides a clear structure that helps others understand the methodology, results, and interpretations without needing to run the code themselves.
